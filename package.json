@@ -1,4 +1,36 @@
 {
+
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Workflow app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luis-Ramirez21x/Project-2.git"
+  },
+  "author": "Brendan, Luis, Ricardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luis-Ramirez21x/Project-2/issues"
+  },
+  "homepage": "https://github.com/Luis-Ramirez21x/Project-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
+    "express-sessions": "^1.0.6",
+    "install": "^0.13.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "mysql2": "^2.3.3",
+    "npm": "^8.1.4",
+    "sequelize": "^6.12.0-alpha.1"
+=======
   "name": "crowd-funding",
   "version": "1.0.0",
   "description": "",
@@ -25,5 +57,6 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "prettier": "^2.1.2"
+
   }
 }
