@@ -1,7 +1,14 @@
 .mainBar {
-    height: 60vh
+    height: 60vh;
 }
 
 .mainInfo {
-    height: 40vh
+    height: 40vh;
+    color: white;
+    padding-left:2rem;
+}
+
+.taskContainer {
+    display: flex;
+    
 }
