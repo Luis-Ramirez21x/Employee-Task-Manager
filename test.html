@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/public/css/jass.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <a class="brand-logo"><i class="material-icons">directions</i>Task Manager</a>
+      <ul class="right hide-on-small-and-down">
+        <li><a class="modal-trigger" href="#modal1"><i class="material-icons">phone</i></a></li>
+        <li><a class="modal-trigger" href="#modal2"><i class="material-icons">contact_support</i></a></li>
+        <li><a class="" id="logout"><i class="material-icons">logout</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="borderBar"></div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">Telephone</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="row container">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mail</i>
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+              <span class="helper-text" data-error="type in a valid email" data-success="Valid email"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row container">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+            <label for="icon_prefix2">Please explain issues here...</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sumbit</a>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col s12 blue mainBar">
+      <div class="row mainInfo">
+        <div class="col-4">
+          <img class="userPhoto" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
+          <h3 class="container flow-text employeeName">Employee name</h3>
+        </div>
+        <div class="col-6 container">
+          <h3 class="flow-text reminder">Please complete tasks below</h3>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col s12 blue mainBar">
+      <div class="row mainInfo">
+        <div class="col-6 topPadding">
+          <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
+          <h3 class="flow-text employeeName">{{manager.name}}</h3>
+      </div>
+      <div class="col-6 taskBtn">
+        <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+          class="material-icons left">add</i>New Task</a>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s12 container">
+        <select multiple>
+          <option value="1">Employee 1</option>
+          <option value="2">Employee 2</option>
+          <option value="3">Employee 3</option>
+        </select>
+        <label>Employee</label>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s10 container">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Textarea</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="row">
+    <div class="col s12 m6 l3">
+      <div class="taskContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card card">
+              <div class="card-image">
+                <img class="img-responsive" src="public\images\outline_handyman_black_36dp.png">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                {{task}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="taskContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card card">
+              <div class="card-image">
+                <img src="public\images\outline_handyman_black_36dp.png">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                  require little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="taskContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card card">
+              <div class="card-image">
+                <img src="public\images\outline_handyman_black_36dp.png">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                  require little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="taskContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card card">
+              <div class="card-image">
+                <img src="public\images\outline_handyman_black_36dp.png">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                  require little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="borderBar"></div>
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card card">
+              {{employee.name}}
+              <div class="card-image">
+                <img src="public\images\twotone_account_circle_black_48dp.png">
+                
+              </div>
+              <div class="card-content">
+                {{employee.task}}
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card card">
+              {{employee.name}}
+              <div class="card-image">
+                <img src="public\images\twotone_account_circle_black_48dp.png">
+                
+              </div>
+              <div class="card-content">
+                {{employee.task}}
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card card">
+              {{employee.name}}
+              <div class="card-image">
+                <img src="public\images\twotone_account_circle_black_48dp.png">
+                
+              </div>
+              <div class="card-content">
+                {{employee.task}}
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card card">
+              {{employee.name}}
+              <div class="card-image">
+                <img src="public\images\twotone_account_circle_black_48dp.png">
+                
+              </div>
+              <div class="card-content">
+                {{employee.task}}
+              </div>
+            </div>
+          </div>
+        </div>
+     
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+      });
+    </script>
+    <script src="public/js/logout.js"></script>
+
+</body>
+
+</html>
