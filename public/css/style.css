@@ -1,14 +1,40 @@
+
+
 .mainBar {
-    height: 60vh;
+    height: 40vh;
 }
 
 .mainInfo {
-    height: 40vh;
+    height: 30vh;
     color: white;
     padding-left:2rem;
 }
 
-.taskContainer {
-    display: flex;
-    
+.userPhoto {
+    height:30vh;
+}
+
+.cardDetail {
+    width: 100%;
+}
+
+.reminder {
+    padding-top: 19.8rem;
+}
+
+.taskBtn {
+    padding-top: 2rem;
+}
+       
+.topPadding {
+    padding-top: 1rem;
+}
+
+.borderBar {
+    background: #0d253f ;
+    height: 3rem;
+}
+
+.row {
+    margin-bottom: 0;
 }

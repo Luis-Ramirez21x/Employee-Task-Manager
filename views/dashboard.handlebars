@@ -6,6 +6,62 @@
 -deletes task button
 -update task button
 {{#if role == manager}}
+     <div class="row">
+    <div class="col s12 blue mainBar">
+      <div class="row mainInfo">
+        <div class="col-6 topPadding">
+          <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
+          <h3 class="flow-text employeeName">{{manager.name}}</h3>
+      </div>
+      <div class="col-6 taskBtn">
+        <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+          class="material-icons left">add</i>New Task</a>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s12 container">
+        <select multiple>
+          <option value="1">Employee 1</option>
+          <option value="2">Employee 2</option>
+          <option value="3">Employee 3</option>
+        </select>
+        <label>Employee</label>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s10 container">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Textarea</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
+    </div>
+  </div>
+
+  {{#each employee as |worker|}}
+    <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card card">
+              {{employee.name}}
+              <div class="card-image">
+                <img src="public\images\twotone_account_circle_black_48dp.png">
+                
+              </div>
+              <div class="card-content">
+                {{employee.task}}
+              </div>
+            </div>
+          </div>
+  {{/each}}
 
 {{/if}}
 
@@ -19,9 +75,9 @@
         <div class="row mainInfo">
             <div class="col-3">
                 <img class="mainInfo" src="public\images\twotone_account_circle_black_48dp.png" alt="role">
-                <h3 class="container">Employee name</h3>
+                <h3 class="container">{{role.name}}</h3>
             </div>
-            <div class="col-9 container valign-wrapper o">
+            <div class="col-9 container valign-wrapper">
                 <h3>Please complete tasks below</h3>
             </div>
         </div>
@@ -29,13 +85,26 @@
 </div>
 
 {{#each tasks as |task|}}
-    
-< class="row">
+
+  <div class="row">
     <div class="col s12 m6 l3">
-        <div class="taskContainer container">
-            
+      <div class="taskContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card">
+              <div class="card-image">
+                <img class="img-responsive" src="public\images\outline_handyman_black_36dp.png">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                {{task}}
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+</div>
 </div>
 {{/each}}
 {{/if}}
