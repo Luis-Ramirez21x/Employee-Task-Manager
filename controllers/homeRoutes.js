@@ -18,15 +18,22 @@ router.get('/dashboard', async (req,res) => {
   try {
     //finding user bases on session id
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: ['name', 'role'],
+      attributes: ['name', 'role', 'manager'],
     });
-
     //serializing
     const user = userData.get({ plain:true });
 
-    //passing user name and role using that on front end to display certain elements
-    //possibly also pass along logged_in: req.session.logged_in
-    res.render('dashboard', {user});  
+    const taskData = await Task.findAll({
+      where:{ user_id: req.session.user_id},
+      attributes: ['title', 'description', 'date_created'],
+    });
+    const tasks = taskData.map((task) => task.get({ plain:true}));
+        
+    
+    res.render('dashboard', {
+      user,
+      tasks
+    });  
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
