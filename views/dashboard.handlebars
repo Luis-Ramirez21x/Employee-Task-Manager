@@ -1,4 +1,4 @@
-//Welcome message to role on header of page
+
 
 ***manager
 //if manager show all task that employees need to do
@@ -63,19 +63,18 @@
           </div>
   {{/each}}
 
-{{/if}}
 
 
+{{#if user.manager}}
 
-//if employee show task that they need to do
-
-{{#if role == employee}}
 <div class="row">
     <div class="col s12 blue mainBar ">
         <div class="row mainInfo">
             <div class="col-3">
+ handlebarsUpdate
                 <img class="mainInfo" src="public\images\twotone_account_circle_black_48dp.png" alt="role">
                 <h3 class="container">{{role.name}}</h3>
+
             </div>
             <div class="col-9 container valign-wrapper">
                 <h3>Please complete tasks below</h3>
@@ -84,7 +83,9 @@
     </div>
 </div>
 
+
 {{#each tasks as |task|}}
+
 
   <div class="row">
     <div class="col s12 m6 l3">
@@ -101,6 +102,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

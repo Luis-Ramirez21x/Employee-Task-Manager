@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Task } = require('../../models');
 
 //testing route for seeing data base **********************
+// api/task
 router.get('/', async (req,res) =>{
     try{
         const taskData = await Task.findAll();

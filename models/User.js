@@ -34,11 +34,15 @@ User.init(
       validate: {
         len: [8],
       },
-    role: {
-        type:DataTypes.STRING,
-        allowNull: false,
-    }
+    
     },
+    role: {
+      type:DataTypes.STRING,
+      allowNull: false,
+    },
+    manager: {
+      type:DataTypes.BOOLEAN,
+    }
   },
   {
     hooks: {
