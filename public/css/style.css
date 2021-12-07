@@ -19,7 +19,7 @@
 }
 
 .reminder {
-    padding-top: 19.8rem;
+    position: relative;
 }
 
 .taskBtn {

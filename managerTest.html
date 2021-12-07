@@ -1,11 +1,28 @@
-***manager
-//if manager show all task that employees need to do
--create task button
--deletes task button
--update task button
+<!DOCTYPE html>
+<html>
 
-{{#if role.manager == true}}
+<head>
+    <link rel="stylesheet" href="/public/css/jass.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
+<body>
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <a class="brand-logo"><i class="material-icons">directions</i>Task Manager</a>
+            <ul class="right hide-on-small-and-down">
+                <li><a class="modal-trigger" href="#modal1"><i class="material-icons">phone</i></a></li>
+                <li><a class="modal-trigger" href="#modal2"><i class="material-icons">contact_support</i></a></li>
+                <li><a class="" id="logout"><i class="material-icons">logout</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="borderBar"></div>
     <div class="row">
         <div class="col s12 blue mainBar">
             <div class="row mainInfo">
@@ -51,7 +68,6 @@
     <div class="col s12 m6 l3">
         <div class="taskContainer">
             <div class="row">
-              {{#each tasks as |task|}}
                 <div class="col s12 m6 l6">
                     <div class="card card">
                         <div class="card-image">
@@ -66,68 +82,40 @@
                         </div>
                     </div>
                 </div>
-              {{/each}}
+                <div class="col s12 m6 l6">
+                    <div class="card card">
+                        <div class="card-image">
+                            <img src="public\images\outline_handyman_black_36dp.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am
+                                convenient because I
+                                require little markup to use effectively.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-{{#each employee as |employee|}}
-<div class="row">
-  <div class="col s12 m6 l3">
-    <div class="card card">
-      {{employee.name}}
-      <div class="card-image">
-        <img src="public\images\twotone_account_circle_black_48dp.png">
-      </div>
-      <div class="card-content">
-        {{employee.task}}
-      </div>
-    </div>
-  </div>
-  {{/each}}
-  {{/if}}
 
-{{#if role.employee== true}}
-    <div class="row">
-    <div class="col s12 blue mainBar">
-      <div class="row mainInfo">
-        <div class="col-4">
-          <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
-          <h3 class="container flow-text employeeName">Employee name</h3>
-        </div>
-        <div class="col-6 container">
-          <h3 class="flow-text reminder">Please complete tasks below</h3>
-        </div>
-      </div>
-    </div>
-  </div> 
-  
-  {{#each tasks as |task|}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
 
 
-  <div class="row">
-    <div class="col s12 m6 l6">
-      <div class="taskContainer">
-        <div class="row">
-          <div class="col s12 m12 l12">
-            <div class="card card">
-              <div class="card-image">
-                <img class="img-responsive" src="public\images\outline_handyman_black_24dp.png">
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                {{task}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+    <script src="public/js/logout.js"></script>
 
-  {{/each}}
-  {{/if}}
+</body>
 
-
-
- 
+</html>
