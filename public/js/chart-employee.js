@@ -16,10 +16,7 @@ console.log(employees);
 let totalEmploy = titleEl.length;
 let property = "Tasks";
 
-let tottaskE1 = 2;
-let tottaskE2 = 5;
-let tottaskE3 = 4;
-let tottaskE4 = 6;
+let tottask = [1, 2, 3, 4];
 
 let mychart = document.getElementById("myChart").getContext("2d");
 let barChart = new Chart(myChart, {
@@ -29,7 +26,7 @@ let barChart = new Chart(myChart, {
     datasets: [
       {
         label: `${property}`,
-        data: [tottaskE1, tottaskE2, tottaskE3, 6],
+        data: tottask,
       },
     ],
   },
