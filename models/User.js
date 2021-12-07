@@ -42,6 +42,8 @@ User.init(
     },
     manager: {
       type:DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false,
     }
   },
   {
