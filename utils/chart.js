@@ -1,13 +1,5 @@
 module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
-  },
-  get_emoji: () => {
+  get_emojis: () => {
     const randomNum = Math.random();
 
     // Return a random emoji
@@ -19,18 +11,18 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
-
-  //*----
-
+  /*
   get_emo: () => {
     const randomNum = [new Number(3), new String("false"), new Boolean(false)];
 
     return randomNum;
-    //const myString = JSON.stringify(emojis);
+  
   },
+
   get_map: (tasksWithUser) => {
-    const randomNum = Math.random();
-    return randomNum;
+    const mapeado = tasksWithUser.map((task) => task.get({ plain: true }));
+    return mapeado;
     //const myString = JSON.stringify(emojis);
   },
+  */
 };
