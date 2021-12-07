@@ -1,10 +1,20 @@
 let a = document.querySelector(".chart");
 
+let btnEl = document.querySelector(".btn");
+
+let titleEl = document.getElementsByClassName("titleWorker");
+
+let bt1 = btnEl.getAttribute("data-id");
+
+let employees = [];
+
+for (let i = 0; i < titleEl.length; i++) {
+  employees[i] = titleEl[i].textContent;
+}
+
+console.log(employees);
+let totalEmploy = titleEl.length;
 let property = "Tasks";
-let employee1 = "Mary";
-let employee2 = "Sal";
-let employee3 = "Tory";
-let employee4 = "Mani";
 
 let tottaskE1 = 2;
 let tottaskE2 = 5;
@@ -15,7 +25,7 @@ let mychart = document.getElementById("myChart").getContext("2d");
 let barChart = new Chart(myChart, {
   type: "bar",
   data: {
-    labels: [employee1, employee2, employee3, "{{projects}}"],
+    labels: employees,
     datasets: [
       {
         label: `${property}`,

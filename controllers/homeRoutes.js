@@ -55,7 +55,7 @@ router.get("/testDashboard", withAuth, async (req, res) => {
   }
 });
 
-//*---chart
+//*-----------------chart
 
 //loginn with auth view will depend on your employee role
 router.get("/chart", withAuth, async (req, res) => {
@@ -63,7 +63,7 @@ router.get("/chart", withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: ["name", "role", "manager"],
     });
-    const user = userData.get({ plain: true });
+    const userforchart = userData.get({ plain: true });
 
     //getting all employees and their tasks
     const tasksWithUser = await User.findAll({
@@ -74,10 +74,9 @@ router.get("/chart", withAuth, async (req, res) => {
     const employeeTasks = tasksWithUser.map((task) =>
       task.get({ plain: true })
     );
-    console.log(employeeTasks);
 
     res.render("chart", {
-      user,
+      userforchart,
       employeeTasks,
     });
   } catch (err) {
