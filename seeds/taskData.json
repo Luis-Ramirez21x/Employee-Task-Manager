@@ -15,13 +15,18 @@
       "user_id": 2
     },
     {
-        "title": "Create spreadsheets",
-        "description": "organize budgets by department and blah blah",
-        "user_id": 2
-      },
+      "title": "Create spreadsheets",
+      "description": "organize budgets by department and blah blah",
+      "user_id": 2
+    }, 
+     {
+      "title": "Return products",
+      "description": "arranges the return of goods to a vendor",
+      "user_id": 3
+    },
       {
         "title": "Arm Secuirty System ",
-        "description": "arm the alarm fadfafasdfd afdsaf sdafasdfsadf asdfasdf",
-        "user_id": 3
+        "description": "Arm the alarm in the ballroom",
+        "user_id": 4
       }
   ]

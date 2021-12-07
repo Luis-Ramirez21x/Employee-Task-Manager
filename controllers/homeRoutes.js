@@ -55,6 +55,39 @@ router.get("/testDashboard", withAuth, async (req, res) => {
   }
 });
 
+//*---chart
+
+//loginn with auth view will depend on your employee role
+router.get("/chart", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: ["name", "role", "manager"],
+    });
+    const user = userData.get({ plain: true });
+
+    //getting all employees and their tasks
+    const tasksWithUser = await User.findAll({
+      include: Task,
+      required: false,
+    });
+
+    const employeeTasks = tasksWithUser.map((task) =>
+      task.get({ plain: true })
+    );
+    console.log(employeeTasks);
+
+    res.render("chart", {
+      user,
+      employeeTasks,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//*---
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

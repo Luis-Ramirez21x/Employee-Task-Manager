@@ -1,52 +1,67 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  <head>
+    <link rel="stylesheet" href="/public/css/jass.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<body>
-  <nav>
-    <div class="nav-wrapper blue darken-4">
-      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Task Manager</a>
-      <ul class="right hide-on-small-and-down">
-        <li><a class="modal-trigger" href="#modal1"><i class="material-icons">phone</i></a></li>
-        <li><a class="modal-trigger" href="#modal2"><i class="material-icons">contact_support</i></a></li>
-        {{!-- if logged is not working --}}
-        {{#if logged_in}}
-          <li><a class="modal-trigger" href="#modal3"><i class="material-icons">login</i></a></li>
-       {{else}}
-        <li><a class="modal-trigger" href="#modal4"></a><a href="/login">logout</a>
-        {{/if}}
-        {{!-- ------------ --}}
-      </ul>
-    </div>
-  </nav>
-  <div class="borderBar"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-  {{{body}}}
-  <script>
+  <body>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Task
+          Manager</a>
+        <ul class="right hide-on-small-and-down">
+          <li><a class="modal-trigger" href="#modal1"><i
+                class="material-icons"
+              >phone</i></a></li>
+          <li><a class="modal-trigger" href="#modal2"><i
+                class="material-icons"
+              >contact_support</i></a></li>
+          {{! if logged is not working }}
+          {{#if logged_in}}
+            <li><a class="modal-trigger" href="#modal3"><i
+                  class="material-icons"
+                >login</i></a></li>
+          {{else}}
+            <li><a class="modal-trigger" href="#modal4"></a><a
+                href="/login"
+              >logout</a></li>
+          {{/if}}
+          {{! ------------ }}
+        </ul>
+      </div>
+    </nav>
+    <div class="borderBar"></div>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
+    {{{body}}}
+    <script>
 
+      document.addEventListener('DOMContentLoaded', function () { var elems =
+      document.querySelectorAll('.modal'); var instances = M.Modal.init(elems);
+      }); document.addEventListener('DOMContentLoaded', function () { var elems
+      = document.querySelectorAll('select'); var instances =
+      M.FormSelect.init(elems); });
+    </script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems);
-    });
-  </script>
-
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="../../public/js/logout.js"></script>
-<script src="../../public/js/login.js"></script>
-
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+  ></script>
+  <script src="../../public/js/logout.js"></script>
+  <script src="../../public/js/login.js"></script>
 
 </html>
+{{! to manage the charts }}
+
+<script src="./js/chart-employee.js"></script>
