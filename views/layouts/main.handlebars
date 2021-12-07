@@ -16,9 +16,13 @@
       <ul class="right hide-on-small-and-down">
         <li><a class="modal-trigger" href="#modal1"><i class="material-icons">phone</i></a></li>
         <li><a class="modal-trigger" href="#modal2"><i class="material-icons">contact_support</i></a></li>
+        {{!-- if logged is not working --}}
         {{#if logged_in}}
-          <li><a class="" id="logout"><i class="material-icons">logout</i></a></li>
+          <li><a class="modal-trigger" href="#modal3"><i class="material-icons">login</i></a></li>
+       {{else}}
+        <li><a class="modal-trigger" href="#modal4"></a><a href="/login">logout</a>
         {{/if}}
+        {{!-- ------------ --}}
       </ul>
     </div>
   </nav>

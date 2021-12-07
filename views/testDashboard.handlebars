@@ -40,89 +40,90 @@
     </div>
   </div>
 
-  {{#each employeeTasks as |worker|}}
-    <div class="row">
-          <div class="col s12 m6 l3">
-            <div class="card card">
-              {{name}}
-              <div class="card-image">
-                <img src="public\images\twotone_account_circle_black_48dp.png">
-                
+        {{#each employeeTasks as |worker|}}
+          <div class="row">
+                <div class="col s12 m6 l3">
+                  <div class="card card">
+                    {{name}}
+                    <div class="card-image">
+                      <img src="public\images\twotone_account_circle_black_48dp.png">
+                      
+                    </div>
+                    <div class="card-content">
+                      
+                      {{#each tasks as |task|}}
+                      <p>{{title}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
               </div>
-              <div class="card-content">
-                
-                {{#each tasks as |task|}}
-                <p>{{title}}</p>
-                {{/each}}
-              </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <div class="input-field col s12 container">
-                <select multiple>
-                    <option value="1">Employee 1</option>
-                    <option value="2">Employee 2</option>
-                    <option value="3">Employee 3</option>
-                </select>
-                <label>Employee</label>
-            </div>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s10 container">
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Textarea</label>
+          </div>
+        {{/each}}
+                <div id="modal3" class="modal">
+                    <div class="modal-content">
+                        <div class="input-field col s12 container">
+                            <select multiple>
+                                <option value="1">Employee 1</option>
+                                <option value="2">Employee 2</option>
+                                <option value="3">Employee 3</option>
+                            </select>
+                            <label>Employee</label>
+                        </div>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s10 container">
+                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Textarea</label>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
-        </div>
-    </div>
-
-    <div class="col s12 m6 l3">
-        <div class="taskContainer">
-            <div class="row">
-              {{#each tasks as |task|}}
-                <div class="col s12 m6 l6">
-                    <div class="card card">
-                        <div class="card-image">
-                            <img src="public\images\outline_handyman_black_36dp.png">
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                    class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am
-                                convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
                     </div>
                 </div>
-              {{/each}}
-            </div>
-        </div>
-    </div>
 
-{{#each employee as |employee|}}
-<div class="row">
-  <div class="col s12 m6 l3">
-    <div class="card card">
-      {{employee.name}}
-      <div class="card-image">
-        <img src="public\images\twotone_account_circle_black_48dp.png">
-      </div>
-      <div class="card-content">
-        {{employee.task}}
-      </div>
-    </div>
-  </div>
-  {{/each}}
-  {{/if}}
+          <div class="col s12 m6 l3">
+              <div class="taskContainer">
+                  <div class="row">
+                          {{#each tasks as |task|}}
+                            <div class="col s12 m6 l6">
+                                <div class="card card">
+                                    <div class="card-image">
+                                        <img src="public\images\outline_handyman_black_36dp.png">
+                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                                class="material-icons">add</i></a>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>I am a very simple card. I am good at containing small bits of information. I am
+                                            convenient because I
+                                            require little markup to use effectively.</p>
+                                    </div>
+                                </div>
+                            </div>
+                          {{/each}}
+                  </div>
+              </div>
+          </div>
+
+            {{#each employee as |employee|}}
+            <div class="row">
+              <div class="col s12 m6 l3">
+                <div class="card card">
+                  {{employee.name}}
+                  <div class="card-image">
+                    <img src="public\images\twotone_account_circle_black_48dp.png">
+                  </div>
+                  <div class="card-content">
+                    {{employee.task}}
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+  
+{{!-- this is not working
 
 {{#if role.employee== true}}
     <div class="row">
@@ -163,4 +164,4 @@
   </div>
 
   {{/each}}
-  {{/if}}
+  {{/if}} --}}

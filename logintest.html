@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="/public/css/jass.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  <body>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a class="brand-logo"
+          ><i class="material-icons">directions</i>Task Manager</a
+        >
+        <ul class="right hide-on-small-and-down">
+          <li>
+            <a class="modal-trigger" href="#modal1"
+              ><i class="material-icons">phone</i></a
+            >
+          </li>
+          <li>
+            <a class="modal-trigger" href="#modal2"
+              ><i class="material-icons">contact_support</i></a
+            >
+          </li>
+          <li>
+            <a class="" id="logout"><i class="material-icons">logout</i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<body>
-  <nav>
-    <div class="nav-wrapper blue darken-4">
-      <a class="brand-logo"><i class="material-icons">directions</i>Task Manager</a>
-      <ul class="right hide-on-small-and-down">
-        <li><a class="modal-trigger" href="#modal1"><i class="material-icons">phone</i></a></li>
-        <li><a class="modal-trigger" href="#modal2"><i class="material-icons">contact_support</i></a></li>
-        <li><a class="" id="logout"><i class="material-icons">logout</i></a></li>
-      </ul>
+    <div class="borderBar"></div>
+
+    <div class="container">
+      <h2 class="center-align">Login</h2>
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login">email:</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">password:</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">login</button>
+        </div>
+      </form>
     </div>
-  </nav>
 
-  <div class="borderBar"></div>
-
-<div class="container">
-    <h2 class="center-align">Login</h2>
-    <form class="form login-form">
-    <div class="form-group">
-      <label for="email-login">email:</label>
-      <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group">
-      <label for="password-login">password:</label>
-      <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">login</button>
-    </div>
-    </form>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.modal');
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".modal");
         var instances = M.Modal.init(elems);
       });
 
-
-      document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('select');
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll("select");
         var instances = M.FormSelect.init(elems);
       });
     </script>
     <script src="public/js/logout.js"></script>
-
-</body>
-
+    <script src="public/js/login.js"></script>
+  </body>
 </html>
