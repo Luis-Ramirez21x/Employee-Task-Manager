@@ -14,25 +14,26 @@ router.get('/', async (req, res) => {
     });
 
 //loginn with auth view will depend on your employee role 
-router.get('/dashboard', async (req,res) => {
+router.get('/dashboard',withAuth ,async (req,res) => {
   try {
     //finding user bases on session id
-    /*const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: ['name', 'role', 'manager'],
     });
     //serializing
-    const user = userData.get({ plain:true });*/
+    const user = userData.get({ plain:true });
 
     //getting all employees and their tasks 
     const tasksWithUser = await User.findAll({ include: Task, required:false });
-    res.json(tasksWithUser);
-   
+    
+   //serializing
     const employeeTasks = tasksWithUser.map((task) => task.get({ plain:true }));
     console.log(employeeTasks);
-    //res.json(employeeTasks);
+    
    
 
     //finds task for logged in user
+    //user for employee only
     /*const taskData = await Task.findAll({
       where:{ user_id: req.session.user_id},
       attributes: ['title', 'description', 'date_created'],
@@ -40,8 +41,8 @@ router.get('/dashboard', async (req,res) => {
     const tasks = taskData.map((task) => task.get({ plain:true}));
       */  
     
-    res.render('dashboard', {
-      /*user,*/
+    res.render('testDashboard', {
+      user,
       employeeTasks
     });  
   } catch (err) {

@@ -1,4 +1,4 @@
-//pass along 
+
 
 
 {{#if user.manager}}
@@ -43,19 +43,19 @@
     </div>
   </div>
 
-  {{#each employee as |worker|}}
+  {{#each employeeTasks as |worker|}}
     <div class="row">
           <div class="col s12 m6 l3">
             <div class="card card">
-              {{worker.name}}
+              {{name}}
               <div class="card-image">
                 <img src="public\images\twotone_account_circle_black_48dp.png">
                 
               </div>
               <div class="card-content">
-                {{worker.tasks}}
-                {{#each worker.task as |task|}}
-                <p>{{task.title}}</p>
+                
+                {{#each tasks as |task|}}
+                <p>{{title}}</p>
                 {{/each}}
               </div>
             </div>
