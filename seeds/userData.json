@@ -3,19 +3,19 @@
       "name": "Sal",
       "email": "sal@hotmail.com",
       "password": "password12345",
-      "role": "employee",
+      "role": "programmer",
       "manager": true
     },
     {
       "name": "Lernantino",
       "email": "lernantino@gmail.com",
       "password": "password12345",
-      "role": "manager"
+      "role": "janitor"
     },
     {
       "name": "Amiko",
       "email": "amiko2k20@aol.com",
       "password": "password12345",
-      "role": "employee"
+      "role": "inventory speacialist"
     }
   ]
