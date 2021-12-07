@@ -17,5 +17,11 @@
       "email": "amiko2k20@aol.com",
       "password": "password12345",
       "role": "inventory speacialist"
+    },
+    {
+      "name": "Taylor",
+      "email": "tay@aol.com",
+      "password": "password12345",
+      "role": "Loss prevention"
     }
   ]

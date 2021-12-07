@@ -1,0 +1,16 @@
+{{#if user.manager}}
+     <div class="row">
+    <div class="col s12 blue mainBar">
+      <div class="row mainInfo">
+        <div class="col-6 topPadding">
+          <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
+          <h3 class="flow-text employeeName">{{user.name}} {{user.role}} {{user.manager}}</h3>
+      </div>
+      <div class="col-6 taskBtn">
+        <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+          class="material-icons left">add</i>New Task</a>
+    </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
