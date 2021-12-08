@@ -30,13 +30,10 @@
               >contact_support</i></a></li>
           {{! if logged is not working }}
           {{#if logged_in}}
-            <li><a class="modal-trigger" href="#modal3"><i
-                  class="material-icons"
-                >login</i></a></li>
+            <li><a class="modal-trigger" href=""><i
+                  class="material-icons" id="logout" >logout</i></a></li>
           {{else}}
-            <li><a class="modal-trigger" href="#modal4"></a><a
-                href="/login"
-              >logout</a></li>
+            <li><a class="modal-trigger" href="#modal4"></a><a href="">login</a></li>
           {{/if}}
           {{! ------------ }}
         </ul>

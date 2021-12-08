@@ -21,10 +21,10 @@
 .reminder {
     position: relative;
 }
-
+/*
 .taskBtn {
     padding-top: 2rem;
-}
+}*/
        
 .topPadding {
     padding-top: 1rem;
@@ -47,4 +47,10 @@
 .card .card-image{
     height: 50px;
     width: 50px;
+}
+
+.manager-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    padding:30px 15px 0px;
 }

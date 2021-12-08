@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//loginn with auth view will depend on your employee role
+//manager view
 router.get("/manager", withAuth, async (req, res) => {
   try {
     //finding user bases on session id
@@ -34,20 +34,12 @@ router.get("/manager", withAuth, async (req, res) => {
     const employeeTasks = tasksWithUser.map((task) =>
       task.get({ plain: true })
     );
-    console.log(employeeTasks);
-
-    //finds task for logged in user
-    //user for employee only
-    /*const taskData = await Task.findAll({
-      where:{ user_id: req.session.user_id},
-      attributes: ['title', 'description', 'date_created'],
-    });
-    const tasks = taskData.map((task) => task.get({ plain:true}));
-      */
+    
 
     res.render("manager", {
       user,
       employeeTasks,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -85,12 +77,39 @@ router.get("/chart", withAuth, async (req, res) => {
   }
 });
 
-//*---
+//employee view
+router.get("/employee", withAuth, async (req, res) => {
+  try {
+    //finding user bases on session id
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: ["name", "role", "manager"],
+    });
+    //serializing
+    const user = userData.get({ plain: true });
+
+    //gets all tasks asscoiated with logged in user
+    const taskData = await Task.findAll({ where: {user_id:req.session.user_id } });
+    const tasks = taskData.map((task) => task.get({ plain:true }));
+    
+
+    res.render("employee", {
+      user,
+      tasks,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
+  if (req.session.logged_in && req.session.manager) {
     res.redirect("/manager");
+    return;
+  } else if (req.session.logged_in && !req.session.manager) {
+    res.redirect("/employee");
     return;
   }
 
