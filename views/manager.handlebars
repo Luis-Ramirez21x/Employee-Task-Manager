@@ -1,19 +1,26 @@
 
-     <div class="row">
-    <div class="col s12 blue mainBar">
-      <div class="row mainInfo">
-        <div class="col-6 topPadding">
+<div class="row">
+  <div class="col s12 blue mainBar">
+    <div class="row mainInfo">
+      <div class="col-6 topPadding">
           <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
           <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
           
       </div>
-      <div class="col-6 taskBtn">
-        <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+      <div class="manager-buttons">
+        <div class="col-6 taskBtn">
+          <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
           class="material-icons left">add</i>New Task</a>
-    </div>
-      </div>
+        </div>
+        <!--Addin new user-->
+        <div class="col-6 registerBtn">
+          <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+          class="material-icons left">add</i>New-Employee</a>
+        </div>
+      </div> 
     </div>
   </div>
+</div>
 <!--code for adding a new user-->
   <div id="modal3" class="modal">
     <div class="modal-content">
@@ -47,13 +54,14 @@
           
                 <div class="col s12 m6 l3">
                   <div class="card card">
-                    {{name}}
+                    <h5>{{name}}</h5>
                     <div class="card-image">
                       <img src="../images/twotone_account_circle_black_48dp.png">
                       
                     </div>
                     <div class="card-content">
-                      
+                      <h5>Role: {{role}}</h6>
+                      <h5>Tasks:</h5>
                       {{#each tasks as |task|}}
                       <p>{{title}}</p>
                       {{/each}}
@@ -62,7 +70,7 @@
               </div>
          
         {{/each}}
-         </div>
+  </div>
 
   <script src="../js/createTask.js"></script>
          <!--
