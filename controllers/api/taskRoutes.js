@@ -16,12 +16,12 @@ router.get('/', async (req,res) =>{
 }});
 //************************* 
 
-//routes for creating task
+//routes for creating task from managers control
 router.post('/', async (req, res) => {
     try {
       const newTask = await Task.create({
         ...req.body,
-        user_id: req.session.user_id,
+        
       });
   
       res.status(200).json(newTask);

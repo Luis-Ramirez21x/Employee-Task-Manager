@@ -1,10 +1,11 @@
-{{#if user.manager}}
+
      <div class="row">
     <div class="col s12 blue mainBar">
       <div class="row mainInfo">
         <div class="col-6 topPadding">
           <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
-          <h3 class="flow-text employeeName">{{user.name}} {{user.role}} {{user.manager}}</h3>
+          <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
+          
       </div>
       <div class="col-6 taskBtn">
         <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
@@ -13,14 +14,15 @@
       </div>
     </div>
   </div>
-{{/if}}
+<!--code for adding a new user-->
   <div id="modal3" class="modal">
     <div class="modal-content">
       <div class="input-field col s12 container">
-        <select multiple>
-          <option value="1">Employee 1</option>
-          <option value="2">Employee 2</option>
-          <option value="3">Employee 3</option>
+        <select multiple id="employee">
+          <!-- passes through all employees object to render the options-->
+          {{#each employeeTasks as |employee|}}
+          <option value="{{id}}">{{name}}</option>
+          {{/each}}
         </select>
         <label>Employee</label>
       </div>
@@ -28,25 +30,26 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s10 container">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Textarea</label>
+              <label for="assign-task">Textarea</label>
+              <textarea id="assign-task" class="materialize-textarea">Add Task...</textarea>
             </div>
           </div>
         </form>
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
+      <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-button">Add</a>
     </div>
   </div>
-{{!-- this is working --}}
+{{!-- Shows employee and their coresponding task --}}
+<div class="row">
         {{#each employeeTasks as |worker|}}
-          <div class="row">
+          
                 <div class="col s12 m6 l3">
                   <div class="card card">
                     {{name}}
                     <div class="card-image">
-                      <img src="public\images\twotone_account_circle_black_48dp.png">
+                      <img src="../images/twotone_account_circle_black_48dp.png">
                       
                     </div>
                     <div class="card-content">
@@ -57,8 +60,12 @@
                     </div>
                   </div>
               </div>
-          </div>
+         
         {{/each}}
+         </div>
+
+  <script src="../js/createTask.js"></script>
+         <!--
                 <div id="modal3" class="modal">
                     <div class="modal-content">
                         <div class="input-field col s12 container">
@@ -123,7 +130,7 @@
                   </div>
                 </div>
               </div>
-              {{/each}}
+              {{/each}}-->
   
 {{!-- this is not working
 
