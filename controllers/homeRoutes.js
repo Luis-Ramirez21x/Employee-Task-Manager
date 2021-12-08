@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 //loginn with auth view will depend on your employee role
-router.get("/testDashboard", withAuth, async (req, res) => {
+router.get("/manager", withAuth, async (req, res) => {
   try {
     //finding user bases on session id
     const userData = await User.findByPk(req.session.user_id, {
@@ -45,7 +45,7 @@ router.get("/testDashboard", withAuth, async (req, res) => {
     const tasks = taskData.map((task) => task.get({ plain:true}));
       */
 
-    res.render("testDashboard", {
+    res.render("manager", {
       user,
       employeeTasks,
     });
@@ -91,11 +91,11 @@ router.get("/chart", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/testDashboard");
+    res.redirect("/manager");
     return;
   }
 
-  res.render("testDashboard");
+  res.render("login");
 });
 
 module.exports = router;

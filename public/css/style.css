@@ -38,3 +38,13 @@
 .row {
     margin-bottom: 0;
 }
+
+.card{
+    height: 400px;
+    width: 335px;
+}
+
+.card .card-image{
+    height: 50px;
+    width: 50px;
+}
