@@ -1,13 +1,14 @@
 
 
 .mainBar {
-    height: 40vh;
+    height: 10rem;
 }
 
 .mainInfo {
     height: 30vh;
     color: white;
     padding-left:2rem;
+    padding-top: 2rem;
 }
 
 .userPhoto {
@@ -37,4 +38,8 @@
 
 .row {
     margin-bottom: 0;
+}
+
+nav .brand-logo {
+    font-size: 1rem;
 }

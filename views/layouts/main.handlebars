@@ -3,13 +3,14 @@
 
 <head>
   <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
+
   <nav>
     <div class="nav-wrapper blue darken-4">
       <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Task Manager</a>
@@ -22,9 +23,68 @@
       </ul>
     </div>
   </nav>
+
+  <div class="borderBar"></div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">Telephone</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="row container">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mail</i>
+              <input id="emailInput" type="email" class="validate">
+              <label for="emailInput">Email</label>
+              <span class="helper-text" data-error="type in a valid email" data-success="Valid email"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row container">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+            <label for="icon_prefix2">Please explain issues here...</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sumbit</a>
+    </div>
+  </div>
+
   <div class="borderBar"></div>
 
   {{{body}}}
+
   <script>
 
     document.addEventListener('DOMContentLoaded', function () {
