@@ -1,8 +1,8 @@
 <html>
 
   <head>
-    <link rel="stylesheet" href="/public/css/jass.css" />
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="../css/jass.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -30,13 +30,14 @@
               >contact_support</i></a></li>
           {{! if logged is not working }}
           {{#if logged_in}}
-            <li><a class="modal-trigger" href="#modal3"><i
+            <li><a class="modal-trigger" href=""><i
                   class="material-icons"
-                >login</i></a></li>
+                  id="logout"
+                >logout</i></a></li>
           {{else}}
             <li><a class="modal-trigger" href="#modal4"></a><a
-                href="/login"
-              >logout</a></li>
+                href=""
+              >login</a></li>
           {{/if}}
           {{! ------------ }}
         </ul>
@@ -46,7 +47,6 @@
 
     {{{body}}}
     <script>
-
       document.addEventListener('DOMContentLoaded', function () { var elems =
       document.querySelectorAll('.modal'); var instances = M.Modal.init(elems);
       }); document.addEventListener('DOMContentLoaded', function () { var elems
@@ -58,10 +58,12 @@
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
   ></script>
-  <script src="../../public/js/logout.js"></script>
-  <script src="../../public/js/login.js"></script>
+  <!--
+  <script src="../js/logout.js"></script>
+  -->
 
 </html>
 {{! to manage the charts }}
-
+<!--
 <script src="./js/chart-employee.js"></script>
+-->

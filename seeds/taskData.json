@@ -1,32 +1,32 @@
 [
+  {
+    "title": "Organize Inventory ",
+    "description": "Sort phones by brand",
+    "user_id": 1
+  },
+  {
+    "title": "Clean Desk",
+    "description": "Clean all the desk!",
+    "user_id": 1
+  },
+  {
+    "title": "Vacum Office",
+    "description": "Please Vacum everyones offices!",
+    "user_id": 2
+  },
+  {
+    "title": "Create spreadsheets",
+    "description": "organize budgets by department and blah blah",
+    "user_id": 2
+  }, 
+   {
+    "title": "Return products",
+    "description": "arranges the return of goods to a vendor",
+    "user_id": 3
+  },
     {
-      "title": "Organize Inventory ",
-      "description": "Sort phones by brand",
-      "user_id": 1
-    },
-    {
-      "title": "Clean Desk",
-      "description": "Clean all the desk!",
-      "user_id": 1
-    },
-    {
-      "title": "Vacum Office",
-      "description": "Please Vacum everyones offices!",
-      "user_id": 2
-    },
-    {
-      "title": "Create spreadsheets",
-      "description": "organize budgets by department and blah blah",
-      "user_id": 2
-    }, 
-     {
-      "title": "Return products",
-      "description": "arranges the return of goods to a vendor",
-      "user_id": 3
-    },
-      {
-        "title": "Arm Secuirty System ",
-        "description": "Arm the alarm in the ballroom",
-        "user_id": 4
-      }
-  ]
+      "title": "Arm Secuirty System ",
+      "description": "Arm the alarm in the ballroom",
+      "user_id": 4
+    }
+]
