@@ -1,6 +1,6 @@
 //routes for creating users in session db
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Task } = require("../../models");
 
 //gets all users route for testing
 router.get("/", async (req, res) => {
@@ -76,5 +76,7 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+
 
 module.exports = router;
