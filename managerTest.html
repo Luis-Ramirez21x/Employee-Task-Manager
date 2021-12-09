@@ -25,19 +25,26 @@
     <div class="borderBar"></div>
     <div class="row">
         <div class="col s12 blue mainBar">
-            <div class="row mainInfo">
-                <div class="col-6 topPadding">
-                    <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png"
-                        alt="user">
-                    <h3 class="flow-text employeeName">{{manager.name}}</h3>
-                </div>
-                <div class="col-6 taskBtn">
-                    <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
-                            class="material-icons left">add</i>New Task</a>
-                </div>
+          <div class="row mainInfo">
+            <div class="col-6 topPadding">
+                <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
+                <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
+                
             </div>
+            <div class="manager-buttons valign-wrapper">
+              <div class="col-6 taskBtn">
+                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+                class="material-icons left">add</i>New Task</a>
+              </div>
+              <!--Addin new user-->
+              <div class="col-6 registerBtn">
+                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal4"><i
+                class="material-icons left">add</i><p>New-User</p></a>
+              </div>
+            </div> 
+          </div>
         </div>
-    </div>
+      </div>
 
     <div id="modal3" class="modal">
         <div class="modal-content">
