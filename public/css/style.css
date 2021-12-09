@@ -54,3 +54,7 @@
     flex-wrap:wrap;
     padding:30px 15px 0px;
 }
+
+.chart {
+    max-height: 35vh;
+}
