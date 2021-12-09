@@ -12,6 +12,7 @@
     {
       "title": "Vacum Office",
       "description": "Please Vacum everyones offices!",
+      "task_status" :true,
       "user_id": 2
     },
     {
