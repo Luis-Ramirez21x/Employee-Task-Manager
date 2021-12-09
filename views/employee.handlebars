@@ -30,11 +30,16 @@
 
         <h5>{{title}}</h5>
         <p>{{description}}</p>
-
+        <a class="btn-floating halfway-fab waves-effect waves-light red check-button" id="{{id}}">
+          <i class="material-icons">check_circle</i>
+        </a>
       </div>
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      
     </div>
   {{/each}}
 </div>
 
-<script src="./js/chart-simple.js"></script>
+<script src="../js/chart-simple.js"></script>
+<script src="../js/taskStatus.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
