@@ -14,14 +14,14 @@
         </div>
         <!--Addin new user-->
         <div class="col-6 registerBtn">
-          <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
+          <a class="waves-effect waves-light btn-large modal-trigger" href="#modal4"><i
           class="material-icons left">add</i>New-Employee</a>
         </div>
       </div> 
     </div>
   </div>
 </div>
-<!--code for adding a new user-->
+<!--code for adding a new task-->
   <div id="modal3" class="modal">
     <div class="modal-content">
       <div class="input-field col s12 container">
@@ -46,6 +46,36 @@
     </div>
     <div class="modal-footer">
       <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-button">Add</a>
+    </div>
+  </div>
+<!--Code for adding a new employee-->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s10 container">
+              <label for="name-signup">Name: </label>
+              <textarea id="name-signup" class="materialize-textarea" placeholder="Employee Name..."></textarea>
+            </div>
+            <div class="input-field col s10 container">
+              <label for="email-signup">Email: </label>
+              <textarea id="email-signup" class="materialize-textarea" placeholder="Enter Email..."></textarea>
+            </div>
+            <div class="input-field col s10 container">
+              <label for="password-signup">Password: </label>
+              <textarea id="password-signup" class="materialize-textarea" placeholder="Create Password..."></textarea>
+            </div>
+            <div class="input-field col s10 container">
+              <label for="role-signup">Employee-Role: </label>
+              <textarea id="role-signup" class="materialize-textarea" placeholder="Add Employee Role..."></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-user">Add</a>
     </div>
   </div>
 {{!-- Shows employee and their coresponding task --}}
@@ -73,6 +103,7 @@
   </div>
 
   <script src="../js/createTask.js"></script>
+  <script src="../js/registerEmployee.js"></script>
          <!--
                 <div id="modal3" class="modal">
                     <div class="modal-content">
