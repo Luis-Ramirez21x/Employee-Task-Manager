@@ -34,7 +34,6 @@ router.get("/manager", withAuth, async (req, res) => {
     const employeeTasks = tasksWithUser.map((task) =>
       task.get({ plain: true })
     );
-    
 
     res.render("manager", {
       user,
@@ -88,9 +87,10 @@ router.get("/employee", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     //gets all tasks asscoiated with logged in user
-    const taskData = await Task.findAll({ where: {user_id:req.session.user_id } });
-    const tasks = taskData.map((task) => task.get({ plain:true }));
-    
+    const taskData = await Task.findAll({
+      where: { user_id: req.session.user_id },
+    });
+    const tasks = taskData.map((task) => task.get({ plain: true }));
 
     res.render("employee", {
       user,
