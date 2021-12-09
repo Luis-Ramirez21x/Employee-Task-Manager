@@ -1,30 +1,33 @@
 <!--Blue Heading-->
 <div class="row">
-    <div class="col s12 blue mainBar">
-        <div class="row mainInfo">
-            <div class="col-6 topPadding">
-                <img class="userPhoto responsive-img" src="public\images\twotone_account_circle_black_48dp.png" alt="user">
-                <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
-            </div>
-            <div class="col-6 container">
-                <h3 class="flow-text reminder">"Ricardo will insert chart view here"</h3>
-            </div>
-        </div>
+  <div class="col s12 blue mainBar">
+    <div class="row mainInfo">
+      <div class="col-6 topPadding">
+        <img
+          class="userPhoto responsive-img"
+          src="public\\\\\\\\\\\\\\images\twotone_account_circle_black_48dp.png"
+          alt="user"
+        />
+        <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
+      </div>
+      <canvas id="myChart" width="400" height="400"></canvas>
     </div>
+  </div>
 </div>
 
 <!--Employee Tasks-->
 <div class="row">
-    
-    {{#each tasks as |task|}}
-        <div class="col s12 m6 l3">
-            <div class="card card">
 
-               <h5>{{title}}</h5>
-               <p>{{description}}</p>
+  {{#each tasks as |task|}}
+    <div class="col s12 m6 l3">
+      <div class="card card">
 
+        <h5>{{title}}</h5>
+        <p>{{description}}</p>
 
-            </div>
-        </div>
-    {{/each}}
+      </div>
+    </div>
+  {{/each}}
 </div>
+
+<script src="./js/chart-simple.js"></script>

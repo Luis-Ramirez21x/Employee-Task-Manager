@@ -12,22 +12,23 @@ for (let i = 0; i < titleEl.length; i++) {
   employees[i] = titleEl[i].textContent;
 }
 
-console.log(employees);
-let totalEmploy = titleEl.length;
-let property = "Tasks";
+// console.log(employees);
 
-let tottask = [1, 2, 3, 4];
+// let totalEmploy = titleEl.length;
+// let property = "Tasks";
 
-let mychart = document.getElementById("myChart").getContext("2d");
-let barChart = new Chart(myChart, {
-  type: "bar",
-  data: {
-    labels: employees,
-    datasets: [
-      {
-        label: `${property}`,
-        data: tottask,
-      },
-    ],
-  },
-});
+// let tottask = [1, 2, 3, 4];
+
+// let mychart = document.getElementById("myChart").getContext("2d");
+// let barChart = new Chart(myChart, {
+//   type: "bar",
+//   data: {
+//     labels: employees,
+//     datasets: [
+//       {
+//         label: `${property}`,
+//         data: tottask,
+//       },
+//     ],
+//   },
+// });
