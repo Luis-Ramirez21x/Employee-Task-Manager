@@ -1,43 +1,40 @@
 <!--Blue Heading-->
-<div class="row">
+<div class="row topRow">
   <div class="blue mainBar col-12">
     <div class="mainInfo row col-12">
       <div class="col-6 topPadding left">
-        <img
-          class="userPhoto responsive-img"
-
-          src="../images/twotone_account_circle_black_48dp.png"
-
-          alt="user"
-        />
+        <img class="userPhoto responsive-img" src="../images/twotone_account_circle_black_48dp.png" alt="user" />
         <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
       </div>
       <!--Chart Graphic-->
-        <div class="col-6 topPadding right">
-          <div class="col-12">
-            <canvas class="chart" id="myChart">
-            </canvas>
-          </div>              
+      <div class="col-6 topPadding right">
+        <div class="col-12">
+          <canvas class="chart" id="myChart">
+          </canvas>
         </div>
+      </div>
     </div>
-  </div>
+  </div>  
 </div>
+<div class="borderBar"></div>
+
+
 
 <!--Employee Tasks-->
 <div class="row">
 
   {{#each tasks as |task|}}
-    <div class="col s12 m6 l6">
-      <div class="card container">
+  <div class="col s12 m6 l4 left">
+    <div class="card container">
 
-        <h5>{{title}}</h5>
-        <p>{{description}}</p>
-        <a class="btn-floating halfway-fab waves-effect waves-light red button">
-          <i class="material-icons" id="{{id}}">check_circle</i>
-        </a>
-      </div>
-      
+      <h5 class="container topPadding">{{title}}</h5>
+      <p class="container">{{description}}</p>
+      <a class="btn-floating halfway-fab waves-effect waves-light red button">
+        <i class="material-icons" id="{{id}}">check_circle</i>
+      </a>
     </div>
+
+  </div>
   {{/each}}
 </div>
 
