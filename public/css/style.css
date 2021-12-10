@@ -8,6 +8,7 @@
     height: 30vh;
     color: white;
     padding-left:2rem;
+    width: 100%;
 }
 
 .userPhoto {
@@ -56,5 +57,8 @@
 }
 
 .chart {
+    height:20vh;
+    display: flex;
+    flex: 0 0 0;
     max-height: 35vh;
 }
