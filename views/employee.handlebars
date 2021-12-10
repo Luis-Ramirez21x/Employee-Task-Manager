@@ -5,7 +5,7 @@
       <div class="col-6 topPadding">
         <img
           class="userPhoto responsive-img"
-          src="public\images\twotone_account_circle_black_48dp.png"
+          src="../images/twotone_account_circle_black_48dp.png"
           alt="user"
         />
         <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
@@ -30,8 +30,8 @@
 
         <h5>{{title}}</h5>
         <p>{{description}}</p>
-        <a class="btn-floating halfway-fab waves-effect waves-light red check-button" id="{{id}}">
-          <i class="material-icons">check_circle</i>
+        <a class="btn-floating halfway-fab waves-effect waves-light red button">
+          <i class="material-icons" id="{{id}}">check_circle</i>
         </a>
       </div>
       
@@ -41,5 +41,3 @@
 
 <script src="../js/chart-simple.js"></script>
 <script src="../js/taskStatus.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
