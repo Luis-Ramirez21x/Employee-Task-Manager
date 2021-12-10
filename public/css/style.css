@@ -1,4 +1,6 @@
-
+body {
+    background-color: #EE6C4D;
+}
 
 .mainBar {
     height: 40vh;
@@ -13,6 +15,10 @@
 
 .userPhoto {
     height:30vh;
+}
+
+.card {
+    border:1rem solid;
 }
 
 .cardDetail {

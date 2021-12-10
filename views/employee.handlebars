@@ -27,11 +27,11 @@
 <div class="row">
 
   {{#each tasks as |task|}}
-    <div class="col s12 m6 l6">
+    <div class="col s12 m6 l4 left">
       <div class="card container">
 
-        <h5>{{title}}</h5>
-        <p>{{description}}</p>
+        <h5 class="container topPadding">{{title}}</h5>
+        <p class="container">{{description}}</p>
         <a class="btn-floating halfway-fab waves-effect waves-light red button">
           <i class="material-icons" id="{{id}}">check_circle</i>
         </a>
