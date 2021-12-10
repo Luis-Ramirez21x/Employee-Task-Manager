@@ -1,14 +1,21 @@
 body {
-    background-color: #EE6C4D;
+    background-color: #3D5A80;
 }
 
 .mainBar {
     height: 40vh;
+    background-color: #E0FBFC;
+    border-bottom: 1rem;
+    border-color: #E0FBFC;
+}
+
+.navBar {
+    background-color: #3D5A80;
 }
 
 .mainInfo {
     height: 30vh;
-    color: white;
+    color: black;
     padding-left:2rem;
     width: 100%;
 }
@@ -18,7 +25,8 @@ body {
 }
 
 .card {
-    border:1rem solid;
+    border:5px solid;
+    border-color:  #293241;
 }
 
 .cardDetail {
@@ -38,8 +46,10 @@ body {
 }
 
 .borderBar {
-    background: #0d253f ;
-    height: 3rem;
+    background: #EE6C4D ;
+    height: 1.5rem;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 .topRow {
