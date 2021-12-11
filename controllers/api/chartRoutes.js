@@ -20,17 +20,15 @@ router.get("/", async (req, res) => {
 //get task with the user name
 router.get("/task", async (req, res) => {
   try {
-    const taskData = await Task.findAll({
-      attributes: { exclude: ["date_created"] },
-      order: [["id", "ASC"]],
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
+    const tasksWithUser = await User.findAll({
+      include: Task,
+      required: false,
+      attributes: {
+        exclude: ["password", "role", "email", "manager", "date_created"],
+      },
     });
-    const tasks = taskData.map((task) => task.get({ plain: true }));
+
+    const tasks = tasksWithUser.map((task) => task.get({ plain: true }));
 
     res.status(200).json(tasks);
   } catch (err) {
