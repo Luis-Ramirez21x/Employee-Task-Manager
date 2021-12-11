@@ -1,4 +1,7 @@
 let titleEl = document.getElementsByClassName("titleWorker");
+let taskEl = document.getElementsByClassName("card card");
+console.log(taskEl[0].firstChild);
+
 let employees = [];
 for (let i = 0; i < titleEl.length; i++) {
   employees[i] = titleEl[i].textContent;
