@@ -1,13 +1,9 @@
-
 <div class="row topRow">
-  <div class="col-12 mainBar">
-    <div class="row mainInfo">
+     <div class="row mainInfo">
       <div class="col-6 topPadding">
 
           <img class="userPhoto responsive-img" src="../images/twotone_account_circle_black_48dp.png" alt="user">
-
-          <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
-          
+          <h4 class="flow-text employeeName">Welcome {{user.name}}! </h3>      
       </div>
       <div class="manager-buttons">
         <div class="col-6 taskBtn">
@@ -20,9 +16,8 @@
           class="material-icons left">add</i><p>New- User</p></a> 
         </div>
       </div> 
-    </div>
-  </div>
 </div>
+
 <!--code for adding a new task-->
   <div id="modal3" class="modal">
     <div class="modal-content">
@@ -55,73 +50,63 @@
       <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-button">Add</a>
     </div>
   </div>
-<!--Code for adding a new employee-->
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s10 container">
-              <label for="name-signup">Name: </label>
-              <textarea id="name-signup" class="materialize-textarea" placeholder="Employee Name..."></textarea>
-            </div>
-            <div class="input-field col s10 container">
-              <label for="email-signup">Email: </label>
-              <textarea id="email-signup" class="materialize-textarea" placeholder="Enter Email..."></textarea>
-            </div>
-            <div class="input-field col s10 container">
-              <label for="password-signup">Password: </label>
-              <textarea id="password-signup" class="materialize-textarea" placeholder="Create Password..."></textarea>
-            </div>
-            <div class="input-field col s10 container">
-              <label for="role-signup">Employee-Role: </label>
-              <textarea id="role-signup" class="materialize-textarea" placeholder="Add Employee Role..."></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-user">Add</a>
-    </div>
-  </div>
-  <div class="borderBar"></div>
-{{!-- Shows employee and their coresponding task --}}
+{{!-- CHARTS --}}
 <div class="row">
-        {{#each employeeTasks as |worker|}}
-          
-                <div class="col s12 m6 l3">
-                  <div class="card hoverable">
-                    <h5>{{name}}</h5>
-                    <div class="card-image">
-                      <img src="../images/twotone_account_circle_black_48dp.png">
-                      
-                    </div>
-                    <div class="card-content">
-                      <h5>Role: {{role}}</h6>
-                      <h5>Tasks:</h5>
-                      {{#each tasks as |task|}}
-                      {{#if task_status}}
-                      <p class="completed">{{title}}</p>
-                      <p class="completed">{{format_date due_date}}</p>
+  <div class="col s12"></div>
+  <div class="col s4">
+    {{#each employeeTasks as |worker|}}
+
+      <ul class="collection">
+        {{name}}
+        <li class="collection-item avatar">
+          <i class="material-icons circle md-36">assignment</i>
+          <span class="titleWorker"></span>
+          {{#each tasks as |task|}}
+             {{#if task_status}}
+                      <p class="completed">{{title}} {{format_date due_date}}</p>
+                     
                       {{else}}
-                      <p class={{task_is_due due_date}}>{{title}}</p>
-                      <p class={{task_is_due due_date}}>{{format_date due_date}}</p>
-                        
+                      <p class={{task_is_due due_date}}>{{title}} {{format_date due_date}}
+                        </p>                     
                       {{/if}}
-                      
-                      <!--<p>{{date_created}}</p>-->
-                      {{/each}}
-                    </div>
-                  </div>
-              </div>
-         
-        {{/each}}
+          
+          {{/each}}
+
+        </li>
+      </ul>
+
+    {{/each}}
+
   </div>
+
+  {{! Chrats }}
+  <div class="col s8"><canvas id="myChart" height="150"></canvas>
+    <div id="data1">
+      data
+    </div></div>
+  <div>
+    <ul class="collect">
+      <li>
+        {{#each employeeTasks as |worker|}}
+
+          <button
+            class="waves-effect waves-light btn"
+            data-id="{{worker.id}}"
+          >{{worker.name}}</button>
+        {{/each}}
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+{{!-- chart --}}
+
+
 
   <script src="../js/createTask.js"></script>
   <script src="../js/registerEmployee.js"></script>
-
+<script src="./js/chart-manager.js"></script>
   <script>  document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.datepicker');
       var instances = M.Datepicker.init(elems, {

@@ -1,8 +1,12 @@
 let a = document.querySelector(".chart");
 let btnEl = document.querySelector(".btn");
+let listEmployes = document.querySelector(".input-field");
 
 let bt1 = btnEl.getAttribute("data-id");
-
+let listF = [];
+for (let i = 0; i < listEmployes.length; i++) {
+  listF[i] = titleEl[i].textContent;
+}
 //------*-*---*--*-----*--*-------------
 function getemployes() {
   let firstreq = fetch("/api/chart/task")
