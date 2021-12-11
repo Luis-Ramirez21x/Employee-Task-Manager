@@ -1,6 +1,8 @@
 let titleEl = document.getElementsByClassName("titleWorker");
 let taskEl = document.getElementsByClassName("card card");
+let taskoneEl = document.getElementsByClassName("material-icons");
 console.log(taskEl[0].firstChild);
+console.log(taskoneEl[0].getAttribute("da"));
 
 let employees = [];
 for (let i = 0; i < titleEl.length; i++) {
@@ -14,10 +16,10 @@ let tasktot = tcompleted + tincompleted;
 let property = "Tasks";
 
 let tottask = [1, 2, 3, 4];
-
+let tipo = "pie";
 let mychart = document.getElementById("myChart").getContext("2d");
 let barChart = new Chart(myChart, {
-  type: "doughnut",
+  type: tipo,
   data: {
     labels: ["Not completed", "completed"],
     datasets: [

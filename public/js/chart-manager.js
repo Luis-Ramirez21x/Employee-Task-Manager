@@ -1,136 +1,82 @@
-let a = document.querySelector(".chart");
-let btnEl = document.querySelector(".btn");
-let listEmployes = document.querySelector(".input-field");
-
-let bt1 = btnEl.getAttribute("data-id");
-let listF = [];
-for (let i = 0; i < listEmployes.length; i++) {
-  listF[i] = titleEl[i].textContent;
-}
 //------*-*---*--*-----*--*-------------
 function getemployes() {
   let firstreq = fetch("/api/chart/task")
     .then((res) => res.json())
     .then((res) => {
-      let seqreq = fetch("/api/chart")
-        .then((resU) => resU.json())
-        .then((resU) => {
-          console.log(resU);
-          console.log(res);
-          //console.log(res);
-          //var propertyNames = Object.entries(firstreq);
+      console.log(res);
+      //---------------employees
+      var em = res.map(function (singleElement) {
+        console.log(em);
+        return singleElement.name;
+      });
+      //em.push(res[0].name);
+      //let em = res.forEach((element) => element.name);
+      // Employee1
+      var employtask1 = res[0].tasks.length;
+      var employtask2 = res[1].tasks.length;
+      var employtask3 = res[2].tasks.length;
+      var employtask4 = res[3].tasks.length;
+      var employtask1C = 0;
+      var employtask1I = 0;
+      var employtask2C = 0;
+      var employtask2I = 0;
+      function completes(len, ind, complete, incomplete) {
+        for (let index = 0; index < len.length; index++) {
+          if (res[ind].tasks[index]) {
+            employtask1C++;
+          } else {
+            incomplete++;
+          }
+        }
+        return complete, incomplete;
+      }
+      console.log(employtask1C);
+      let empl1 = [];
+      empl1 = completes(employtask1C, 1, employtask1C, employtask1I);
+      console.log(empl1);
+      // for (let index = 0; index < employtask2.length; index++) {
+      //   if (res[0].tasks[index]) {
+      //     employtask2C++;
+      //   } else {
+      //     employtask2I++;
+      //   }
+      // }
+      //------
 
-          const myJSON = JSON.stringify(res[0].user.name);
-          console.log(myJSON);
-          // console.log(res[1]);
-          let aba = res;
-          let first = res;
-          let second = res[1];
-          /**--
-           * Duplicates
-           */
-
-          var output = [];
-
-          first.forEach(function (item) {
-            var existing = output.filter(function (v, i) {
-              return v.user_id == item.user_id;
-            });
-            if (existing.length) {
-              var existingIndex = output.indexOf(existing[0]);
-              output[existingIndex].value = output[existingIndex].value.concat(
-                item.value
-              );
-            } else {
-              if (typeof item.value == "string") item.value = [item.value];
-              output.push(item);
-            }
-          });
-
-          console.dir(output);
-
-          //------
-          let data1 = document.getElementById("data1");
-          let data = (data1.innerHTML = ` 
-      <ul class="collection">
-       <li class="collection-item avatar">
-         <i class="material-icons circle">folder</i>
-         <span class="titleWorker"> ${myJSON} </span>
-                 </p>
-         <p> ${aba[0].title} </p>
-         ${aba[0].description}
-         ${aba[1].description}
-         ${aba[2].description}
-         ${aba[3].description}
-        </li>  
-      </ul>  `);
-        });
+      console.log(employtask1);
+      let tottaskC = [employtask1, employtask2, employtask3, employtask4];
+      let tottask = [employtask1, employtask2, employtask3, employtask4];
+      let mychart = document.getElementById("myChart").getContext("2d");
+      let barChart = new Chart(myChart, {
+        type: "bar",
+        data: {
+          labels: em,
+          datasets: [
+            {
+              label: ["Tasks"],
+              data: tottaskC,
+              backgroundColor: [
+                "rgba(0, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+      });
     });
 }
 
-let e = getemployes();
-
-//------*-*---*--*-----*--*-------------
-let titleEl = document.getElementsByClassName("titleWorker");
-let employees = [];
-console.log(titleEl);
-console.log(titleEl[0].firstChild);
-for (let i = 0; i < titleEl.length; i++) {
-  employees[i] = titleEl[i].textContent;
-}
-
-//console.log(employees);
-let totalEmploy = titleEl.length;
-
-let tottask = [1, 2, 3, 4, 2];
-let mychart = document.getElementById("myChart").getContext("2d");
-let barChart = new Chart(myChart, {
-  type: "bar",
-  data: {
-    labels: employees,
-    datasets: [
-      {
-        label: ["Complete"],
-        data: tottask,
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-      {
-        label: [" Not Completed"],
-        data: tottask,
-        backgroundColor: [
-          "rgba(0, 99, 132, 0.1)",
-          "rgba(54, 162, 235, 0.1)",
-          "rgba(255, 206, 86, 0.1)",
-          "rgba(75, 192, 192, 0.1)",
-          "rgba(153, 102, 255, 0.1)",
-          "rgba(255, 159, 64, 0.1)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-});
+getemployes();
