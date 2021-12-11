@@ -23,14 +23,23 @@ Task.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    due_date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
-      //possibly add status for a task (not started,in progress, completed)
+      
     },
+    task_status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false,
+    }
   },
   {
     sequelize,

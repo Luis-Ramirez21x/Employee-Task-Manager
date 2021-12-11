@@ -51,5 +51,23 @@ router.delete("/:id", async (req, res) => {
 });
 
 //routes for updating task
+//updates a task route
+router.put("/", async (req, res) => {
+  try {
+      const updateStatus = await Task.update(
+        {
+          task_status: req.body.taskStatus,
+        },
+        {
+          where: {
+            id: req.body.taskId,
+          },
+        }
+      );
 
+    res.status(200).json(updateStatus);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 module.exports = router;

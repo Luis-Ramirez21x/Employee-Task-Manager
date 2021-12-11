@@ -1,36 +1,52 @@
 module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
-  },
-  get_emoji: () => {
-    const randomNum = Math.random();
+  task_is_due: (date) => {
+     
+    let taskDate = date.trim();
+    let todaysDate = new Date();
+    var dd = String(todaysDate.getDate()).padStart(2, '0');
+    var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = todaysDate.getFullYear();
 
-    // Return a random emoji
-    if (randomNum > 0.7) {
-      return `<span for="img" aria-label="lightbulb">💡</span>`;
-    } else if (randomNum > 0.4) {
-      return `<span for="img" aria-label="laptop">💻</span>`;
+    todaysDate = yyyy + '-' + mm + '-' + dd;
+
+    if( (new Date(todaysDate).getTime() < new Date(taskDate).getTime()))
+    {
+    //task is not due
+    return 'pending';
+    }else if ( (new Date(todaysDate).getTime() > new Date(taskDate).getTime())) {
+    //task is past due
+    return 'past-due';
     } else {
-      return `<span for="img" aria-label="gear">⚙️</span>`;
+      //task is due today
+    return 'today!';
     }
   },
+  format_date: (date) => {
+    // Format date as MM/DD/YYYY
+    //return date.toLocaleDateString();
+    let taskDate = date.trim();
+    let todaysDate = new Date();
+    var dd = String(todaysDate.getDate()).padStart(2, '0');
+    var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = todaysDate.getFullYear();
+    todaysDate = yyyy + '-' + mm + '-' + dd;
+    dateFormat = date;
+    dateFormat = dateFormat.substr(5);
+    dateFormat = dateFormat.replace('-', '/');
 
-  //*----
-
-  get_emo: () => {
-    const randomNum = [new Number(3), new String("false"), new Boolean(false)];
-
-    return randomNum;
-    //const myString = JSON.stringify(emojis);
+    if( (new Date(todaysDate).getTime() < new Date(taskDate).getTime()))
+    {
+    
+    return dateFormat;
+    }else if ( (new Date(todaysDate).getTime() > new Date(taskDate).getTime())) {
+    
+    return dateFormat;
+    } else {
+      
+    return 'Today!';
+    }
+    
   },
-  get_map: (tasksWithUser) => {
-    const randomNum = Math.random();
-    return randomNum;
-    //const myString = JSON.stringify(emojis);
-  },
+  
+
 };
