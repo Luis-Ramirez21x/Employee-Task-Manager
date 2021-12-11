@@ -32,14 +32,19 @@ function getemployes() {
       let barChart = new Chart(myChart, {
         type: tipchart,
         data: {
-          labels: ["Completed", "completed"],
+          labels: ["Completed", "Not completed"],
           datasets: [
             {
               label: `${property}`,
               data: [completed, notCompleted],
               backgroundColor: [
-                "rgb(255, 120, 0)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 99, 132, 1)",
+
+                "rgba(255, 206, 86, 1)",
+                "rgba(153, 102, 255, 0.2)",
                 "rgb(255, 255, 0)",
+                "rgb(255, 120, 0)",
                 "rgb(255, 205, 86)",
               ],
             },
