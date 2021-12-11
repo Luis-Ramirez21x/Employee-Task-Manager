@@ -2,32 +2,38 @@
     {
       "title": "Organize Inventory ",
       "description": "Sort phones by brand",
+      "due_date": "2021-12-29",
       "user_id": 1
     },
     {
       "title": "Clean Desk",
       "description": "Clean all the desk!",
+      "due_date": "2021-12-01",
       "user_id": 1
     },
     {
       "title": "Vacum Office",
       "description": "Please Vacum everyones offices!",
       "task_status" :true,
+      "due_date": "2021-12-23",
       "user_id": 2
     },
     {
       "title": "Create spreadsheets",
       "description": "organize budgets by department and blah blah",
+      "due_date": "2021-12-25",
       "user_id": 2
     }, 
      {
       "title": "Return products",
       "description": "arranges the return of goods to a vendor",
+      "due_date": "2021-12-25",
       "user_id": 3
     },
       {
         "title": "Arm Secuirty System ",
         "description": "Arm the alarm in the ballroom",
+        "due_date": "Dec 25, 2021",
         "user_id": 4
       }
   ]

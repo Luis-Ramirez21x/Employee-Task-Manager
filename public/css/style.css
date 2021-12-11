@@ -54,3 +54,15 @@
     flex-wrap:wrap;
     padding:30px 15px 0px;
 }
+/* task styling based on due date*/
+.completed{
+    color:green;
+}
+
+.past-due{
+    color:red;
+}
+
+.pending{
+    color:yellow;
+}

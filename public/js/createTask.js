@@ -4,14 +4,15 @@ const addTask = async (event) =>{
     //get values from form 
     const user_id = document.querySelector('#employee option:checked').value.trim();
     const title = document.querySelector('#assign-task').value.trim();
-    console.log(user_id);
-    console.log(title);
+    const description = document.querySelector('#assign-task-description').value.trim();
+    const due_date = document.querySelector('#due-date').value.trim();
     
-    if (user_id && title) {
+    
+    if (user_id && title && description && due_date) {
         // Send a POST request to the API endpoint
         const response = await fetch('/api/task', {
           method: 'POST',
-          body: JSON.stringify({ user_id, title }),
+          body: JSON.stringify({ user_id, title, description, due_date }),
           headers: { 'Content-Type': 'application/json' },
         });
     
