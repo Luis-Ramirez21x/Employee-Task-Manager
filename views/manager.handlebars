@@ -100,10 +100,10 @@
                       {{#each tasks as |task|}}
                       {{#if task_status}}
                       <p class="completed">{{title}}</p>
-                      <p class="completed">{{due_date}}</p>
+                      <p class="completed">{{format_date due_date}}</p>
                       {{else}}
                       <p class={{task_is_due due_date}}>{{title}}</p>
-                      <p class={{task_is_due due_date}}>{{due_date}}</p>
+                      <p class={{task_is_due due_date}}>{{format_date due_date}}</p>
                         
                       {{/if}}
                       
