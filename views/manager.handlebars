@@ -35,20 +35,33 @@
         <!-- passes through all employees object to render the options-->
         {{#each employeeTasks as |employee|}}
           <option value="{{id}}">{{name}}</option>
-        {{/each}}
-      </select>
-      <label>Employee</label>
-    </div>
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s10 container">
-            <label for="assign-task">Textarea</label>
-            <textarea id="assign-task" class="materialize-textarea">Add Task...</textarea>
+
+          {{/each}}
+        </select>
+        <label>Employee</label>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s10 container">
+              
+              <textarea id="assign-task" class="materialize-textarea" placeholder="Add Task..."></textarea>
+              
+              <textarea id="assign-task-description" class="materialize-textarea" placeholder="Add task details..."></textarea>
+              
+            </div>
+              
+              <input type="text" class="datepicker" id="due-date" placeholder="Click to select due date">
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
+      <div class="modal-footer">
+      <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-button">Add</a>
+
     </div>
+    </div>
+    
   </div>
   <div class="modal-footer">
     <a

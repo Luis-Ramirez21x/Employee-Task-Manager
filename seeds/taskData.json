@@ -1,19 +1,19 @@
 [
     {
-      "title": "Organize Inventory ",
-      "description": "Sort phones by brand",
+      "title": "Lap The Buidling ",
+      "description": "Make sure there are no unlocked doors",
       "due_date": "2021-12-29",
-      "user_id": 1
+      "user_id": 4
     },
     {
-      "title": "Clean Desk",
-      "description": "Clean all the desk!",
+      "title": "Manage",
+      "description": "Assign Duties",
       "due_date": "2021-12-01",
       "user_id": 1
     },
     {
-      "title": "Vacum Office",
-      "description": "Please Vacum everyones offices!",
+      "title": "Refcator code",
+      "description": "You have repeating lines in multiple files...",
       "task_status" :true,
       "due_date": "2021-12-23",
       "user_id": 2
@@ -33,7 +33,7 @@
       {
         "title": "Arm Secuirty System ",
         "description": "Arm the alarm in the ballroom",
-        "due_date": "Dec 25, 2021",
+        "due_date": "2021-12-11",
         "user_id": 4
       }
   ]
