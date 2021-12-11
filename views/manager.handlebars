@@ -8,7 +8,7 @@
       <div class="manager-buttons">
         <div class="col-6 taskBtn">
           <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
-          class="material-icons left">add</i>New Task</a>
+          class="material-icons left">add</i><p>New- Task</p></a>
         </div>
         <!--Addin new user-->
         <div class="col-6 registerBtn">
@@ -18,8 +18,9 @@
       </div>
   </div>
 </div>
+</div>
 <!--code for adding a new task-->
-  <div id="modal3" class="modal">
+   <div id="modal3" class="modal">
     <div class="modal-content">
       <div class="input-field col s12 container">
         <select multiple id="employee">
@@ -36,11 +37,7 @@
             <div class="input-field col s10 container">
               <label for="assign-task">Textarea</label>
               <textarea id="assign-task" class="materialize-textarea">Add Task...</textarea>
-              <label for="assign-task-description">Textarea</label>
-              <textarea id="assign-task-description" class="materialize-textarea">Add task details...</textarea>
             </div>
-            <label for="due-date">Due date:</label>
-              <input type="text" class="datepicker" id="due-date">
           </div>
         </form>
       </div>
@@ -79,7 +76,7 @@
       <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-user">Add</a>
     </div>
   </div>
-  <div class="borderBar"></div>
+  
 {{!-- CHARTS --}}
 <div class="row">
   <div class="col s12"></div>
@@ -119,7 +116,7 @@
   {{! Chrats }}
   <div class="col s8"><canvas id="myChart" height="150"></canvas>
     <div id="data1">
-      data
+      
     </div></div>
 
 </div>
