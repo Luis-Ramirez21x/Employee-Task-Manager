@@ -3,7 +3,7 @@ body {
 }
 
 .mainBar {
-  height: 40vh;
+  height: 250px;
   background-color: #e0fbfc;
   border-bottom: 1rem;
   border-color: #e0fbfc;
@@ -14,10 +14,11 @@ body {
 }
 
 .mainInfo {
-  height: 30vh;
+  height: 22vh;
   color: black;
   padding-left: 2rem;
   width: 100%;
+  justify-content: space-around;
 }
 
 .userPhoto {
@@ -43,6 +44,7 @@ body {
 
 .topPadding {
   padding-top: 1rem;
+  text-align: center;
 }
 
 .borderBar {
@@ -90,4 +92,88 @@ body {
   display: flex;
   flex: 0 0 0;
   max-height: 35vh;
+}
+
+.col-6{
+    padding-top: 75px;
+}
+
+.collection h6{
+    text-align:center;
+}
+
+.employee-names{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.employee-names h6 i{
+font-size: 14px;
+}
+
+.employee-names h5 {
+    font-size:20px;
+}
+
+.task-names{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.companyNews{
+    height: fit-content;
+    background-color:white;
+    margin:10px;
+
+}
+
+.headlines {
+    width: 71%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.line{
+    margin:8px;
+    
+}
+
+.collection .collection-item.avatar .title {
+    font-size: 21px;
+    font-style: italic;
+}
+
+.btn-floating.halfway-fab {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+}
+
+.row .col.s4 {
+    width: 33.3333333333%;
+    margin-left: unset;
+    left: auto;
+    right: auto;
+}
+
+.task-container{
+
+}
+
+.employee-row{
+    justify-content: center;
+    margin-left: 150px;
+    margin-top: 45px;
+}
+
+.col-6 {
+    padding-top: 50px;
 }
