@@ -35,16 +35,23 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s10 container">
-              <label for="assign-task">Textarea</label>
-              <textarea id="assign-task" class="materialize-textarea">Add Task...</textarea>
+              
+              <textarea id="assign-task" class="materialize-textarea" placeholder="Add Task..."></textarea>
+              
+              <textarea id="assign-task-description" class="materialize-textarea" placeholder="Add task details..."></textarea>
+              
+            </div>
+              
+              <input type="text" class="datepicker" id="due-date" placeholder="Click to select due date">
             </div>
           </div>
         </form>
       </div>
-    </div>
-    <div class="modal-footer">
+      <div class="modal-footer">
       <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-button">Add</a>
     </div>
+    </div>
+    
   </div>
 <!--Code for adding a new employee-->
   <div id="modal4" class="modal">
