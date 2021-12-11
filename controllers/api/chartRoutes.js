@@ -35,6 +35,19 @@ router.get("/task", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.get("/single", async (req, res) => {
+  try {
+    const taskData = await Task.findAll({
+      where: { user_id: req.session.user_id},
+    });
+    const tasks = taskData.map((task) => task.get({ plain: true }));
+
+    res.status(200).json(tasks);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 //
 // router.get("/char/task", async (req, res) => {
 //   try {
