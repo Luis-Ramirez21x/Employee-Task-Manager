@@ -8,12 +8,12 @@
       <div class="manager-buttons">
         <div class="col-6 taskBtn">
           <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3"><i
-          class="material-icons left">add</i>New Task</a>
+          class="material-icons left">add</i>Task</a>
         </div>
         <!--Addin new user-->
         <div class="col-6 registerBtn">
           <a class="waves-effect waves-light btn-large modal-trigger" href="#modal4"><i
-          class="material-icons left">add</i><p>New- User</p></a> 
+          class="material-icons left">add</i></a> 
         </div>
       </div> 
 </div>
@@ -57,17 +57,24 @@
     {{#each employeeTasks as |worker|}}
 
       <ul class="collection">
-        {{name}}
+        <div class="employee-names">
+          <h5>{{name}}</h5>
+          <h6><i>{{role}}</i></h6>
+        </div>
         <li class="collection-item avatar">
           <i class="material-icons circle md-36">assignment</i>
           <span class="titleWorker"></span>
           {{#each tasks as |task|}}
              {{#if task_status}}
-                      <p class="completed">{{title}} {{format_date due_date}}</p>
-                     
+                      <div class ="task-names">
+                        <p class="completed"><i>{{title}}</i></p>
+                        <p class="completed"><i>{{format_date due_date}}</i></p>
+                      </div>
                       {{else}}
-                      <p class={{task_is_due due_date}}>{{title}} {{format_date due_date}}
-                        </p>                     
+                      <div class ="task-names"> 
+                        <p class={{task_is_due due_date}}><i>{{title}}</i></p>    
+                        <p class={{task_is_due due_date}}><i>{{format_date due_date}}</i></p>     
+                      </div>            
                       {{/if}}
           
           {{/each}}
