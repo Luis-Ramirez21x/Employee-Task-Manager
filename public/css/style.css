@@ -1,17 +1,32 @@
-
+body {
+    background-color: #3D5A80;
+}
 
 .mainBar {
     height: 40vh;
+    background-color: #E0FBFC;
+    border-bottom: 1rem;
+    border-color: #E0FBFC;
+}
+
+.navBar {
+    background-color: #3D5A80;
 }
 
 .mainInfo {
     height: 30vh;
-    color: white;
+    color: black;
     padding-left:2rem;
+    width: 100%;
 }
 
 .userPhoto {
     height:30vh;
+}
+
+.card {
+    border:5px solid;
+    border-color:  #293241;
 }
 
 .cardDetail {
@@ -31,11 +46,13 @@
 }
 
 .borderBar {
-    background: #0d253f ;
-    height: 3rem;
+    background: #EE6C4D ;
+    height: 1.5rem;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
-.row {
+.topRow {
     margin-bottom: 0;
 }
 
@@ -54,6 +71,7 @@
     flex-wrap:wrap;
     padding:30px 15px 0px;
 }
+
 /* task styling based on due date*/
 .completed{
     color:green;
@@ -65,4 +83,12 @@
 
 .pending{
     color:yellow;
+}
+
+.chart {
+    height:20vh;
+    display: flex;
+    flex: 0 0 0;
+    max-height: 35vh;
+
 }

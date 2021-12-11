@@ -1,9 +1,11 @@
 
-<div class="row">
-  <div class="col s12 blue mainBar">
+<div class="row topRow">
+  <div class="col-12 mainBar">
     <div class="row mainInfo">
       <div class="col-6 topPadding">
+
           <img class="userPhoto responsive-img" src="../images/twotone_account_circle_black_48dp.png" alt="user">
+
           <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
           
       </div>
@@ -83,12 +85,13 @@
       <a href="" class="modal-close waves-effect waves-green btn-flat" id="add-user">Add</a>
     </div>
   </div>
+  <div class="borderBar"></div>
 {{!-- Shows employee and their coresponding task --}}
 <div class="row">
         {{#each employeeTasks as |worker|}}
           
                 <div class="col s12 m6 l3">
-                  <div class="card card">
+                  <div class="card hoverable">
                     <h5>{{name}}</h5>
                     <div class="card-image">
                       <img src="../images/twotone_account_circle_black_48dp.png">
@@ -118,6 +121,7 @@
 
   <script src="../js/createTask.js"></script>
   <script src="../js/registerEmployee.js"></script>
+
   <script>  document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.datepicker');
       var instances = M.Datepicker.init(elems, {
@@ -125,5 +129,6 @@
         });
     });
   </script>
+
 
 
