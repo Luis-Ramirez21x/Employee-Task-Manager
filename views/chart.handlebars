@@ -1,47 +1,68 @@
-<h5>Welcome {{myJSON}} {{userforchart.name}} + {{employeeTasks.[0].id}}+ This is for Managers!</h5>
+<h5>Welcome {{myJSON}} {{userforchart.name}} + {{employeeTasks.0.id}} </h5>
+
+<p> List of Employees</p>
 
 <div class="row">
   <div class="col s12"></div>
-  <div class="col s6">
+  <div class="col s2">
     {{#each employeeTasks as |worker|}}
 
-           <ul class="collection">
-            
-            <li class="collection-item avatar">
-              <i class="material-icons circle">folder</i>
-              <span class="titleWorker"> {{worker.name}}</span>
-                  {{#each tasks as |task|}}
-              </p>
-              <p> {{title}}
-                <br />
-              </p>
-                {{/each}}
-              <a href="#!" class="secondary-content"><i
-                  class="material-icons"
-                >grade</i></a>
-            </li>
-        
+      <ul class="collection">
+
+        <li class="collection-item avatar">
+          <i class="material-icons circle md-36">perm_identity</i>
+          <span class="titleWorker"> {{worker.name}}</span>
+
+        </li>
       </ul>
 
     {{/each}}
-   
+
   </div>
-  <div class="col s6"><canvas id="myChart"></canvas> 
-  <div id="data1">
-data
-</div></div>
+  <div class="col s4">
+    {{#each employeeTasks as |worker|}}
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle md-36">assignment</i>
+          <span class="titleWorker"></span>
+          {{#each tasks as |task|}}
+            <p> {{title}} </p>
+            {{#if title}}
+              <span class="secondary-content"><i
+                  class="material-icons"
+                >done_outline</i></span>{{else}}
+              <span class="secondary-content"><i
+                  class="material-icons"
+                >announcement</i></span>
+            {{/if}}
+          {{/each}}
+
+        </li>
+      </ul>
+
+    {{/each}}
+
+  </div>
+
+  {{! Chrats }}
+  <div class="col s6"><canvas id="myChart" height="150"></canvas>
+    <div id="data1">
+      data
+    </div></div>
   <div>
     <ul class="collect">
-        <li>
+      <li>
         {{#each employeeTasks as |worker|}}
-      
-        <button class="waves-effect waves-light btn" data-id="{{worker.id}}">{{worker.name}}</button>
-    {{/each}}
-         </li>
-    
-      </ul>
+
+          <button
+            class="waves-effect waves-light btn"
+            data-id="{{worker.id}}"
+          >{{worker.name}}</button>
+        {{/each}}
+      </li>
+
+    </ul>
   </div>
 </div>
-
 
 <script src="./js/chart-manager.js"></script>

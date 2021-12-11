@@ -7,7 +7,7 @@ const { Task } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-      attributes: { exclude: ["date_created"], exclude: ["password"] },
+      attributes: { exclude: ["password"] },
       order: [["id", "ASC"]],
     });
     const users = userData.map((user) => user.get({ plain: true }));
@@ -17,9 +17,12 @@ router.get("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+//get task with the user name
 router.get("/task", async (req, res) => {
   try {
     const taskData = await Task.findAll({
+      attributes: { exclude: ["date_created"] },
+      order: [["id", "ASC"]],
       include: [
         {
           model: User,
@@ -34,21 +37,7 @@ router.get("/task", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-//router.get("/chart/", async (req, res) => {
-//   try {
-//     const userData = await User.findAll({
-//       attributes: { exclude: ["password"] },
-//       order: [["id", "ASC"]],
-//     });
-//     const users = userData.map((user) => user.get({ plain: true }));
-
-//     res.status(200).json(users);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
 //
-// });
 // router.get("/char/task", async (req, res) => {
 //   try {
 //     const taskData = await Task.findAll({
