@@ -3,7 +3,9 @@
   <div class="col-12 mainBar">
     <div class="row mainInfo">
       <div class="col-6 topPadding">
-          <img class="userPhoto responsive-img" src="..\images\twotone_account_circle_black_48dp.png" alt="user">
+
+          <img class="userPhoto responsive-img" src="../images/twotone_account_circle_black_48dp.png" alt="user">
+
           <h3 class="flow-text employeeName">Welcome {{user.name}}! </h3>
           
       </div>
@@ -39,7 +41,12 @@
             <div class="input-field col s10 container">
               <label for="assign-task">Textarea</label>
               <textarea id="assign-task" class="materialize-textarea">Add Task...</textarea>
+              <label for="assign-task-description">Textarea</label>
+              <textarea id="assign-task-description" class="materialize-textarea">Add task details...</textarea>
+              
             </div>
+            <label for="due-date">Due date:</label>
+              <input type="text" class="datepicker" id="due-date">
           </div>
         </form>
       </div>
@@ -94,7 +101,16 @@
                       <h5>Role: {{role}}</h6>
                       <h5>Tasks:</h5>
                       {{#each tasks as |task|}}
-                      <p>{{title}}</p>
+                      {{#if task_status}}
+                      <p class="completed">{{title}}</p>
+                      <p class="completed">{{due_date}}</p>
+                      {{else}}
+                      <p class={{task_is_due due_date}}>{{title}}</p>
+                      <p class={{task_is_due due_date}}>{{due_date}}</p>
+                        
+                      {{/if}}
+                      
+                      <!--<p>{{date_created}}</p>-->
                       {{/each}}
                     </div>
                   </div>
@@ -105,4 +121,14 @@
 
   <script src="../js/createTask.js"></script>
   <script src="../js/registerEmployee.js"></script>
+
+  <script>  document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, {
+        format:"yyyy-mm-dd",
+        });
+    });
+  </script>
+
+
 

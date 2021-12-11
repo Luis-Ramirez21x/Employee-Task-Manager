@@ -23,6 +23,10 @@ Task.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    due_date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

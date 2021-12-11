@@ -72,9 +72,23 @@ body {
     padding:30px 15px 0px;
 }
 
+/* task styling based on due date*/
+.completed{
+    color:green;
+}
+
+.past-due{
+    color:red;
+}
+
+.pending{
+    color:yellow;
+}
+
 .chart {
     height:20vh;
     display: flex;
     flex: 0 0 0;
     max-height: 35vh;
+
 }
