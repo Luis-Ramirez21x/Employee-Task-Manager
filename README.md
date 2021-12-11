@@ -10,9 +10,12 @@ The app includes a dashboard where the employer can see graphic representations 
 
 Table of Contents
 Installation
-Usage
-Video
-Credits
 License
-Installation
-Usage
+
+# Installation
+
+npm i
+mysql -u root -p
+source db/schema.sql
+node seeds/seed.js
+npm start
