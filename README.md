@@ -8,10 +8,14 @@ This is an application designed for employers with multiple employees. Multiple 
 
 The app includes a dashboard where the employer can see graphic representations of the degree of completion of various tasks. The graphics are modifiable based on different categories which can be useful when running reports and comparing employee progress.
 
-Table of Contents
-Installation
-License
-Credits
+![image](https://user-images.githubusercontent.com/57916204/145713613-f9627360-2120-4295-a948-6204d8ebea29.png)
+
+
+# Table of Contents
+
+**Installation**
+**License**
+**Credits**
 
 ---
 
