@@ -1,4 +1,4 @@
-# Task Manager
+# Employee Task Manager
 
 Web app where employers can assign tasks to employees and track their progress.
 
