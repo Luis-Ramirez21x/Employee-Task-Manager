@@ -1,4 +1,8 @@
 # Task Manager
+Deployed Link: https://obscure-savannah-57648.herokuapp.com/
+Manager Login:
+ -email: sal@hotmail.com
+ -password: password12345
 
 Web app where employers can assign tasks to employees and track their progress.
 
